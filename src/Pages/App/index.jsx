@@ -1,5 +1,6 @@
 import { useRoutes, BrowserRouter } from 'react-router-dom'
 
+import NavBar from '../../Components/Navbar'
 import Home from '../Home'
 import MyAccount from '../MyAccount'
 import MyOrders from '../MyOrders'
@@ -25,6 +26,7 @@ const App = () => {
   return (
   <BrowserRouter>
     <AppRoutes/>
+    <NavBar></NavBar>
   </BrowserRouter>
 )
 }

@@ -1,6 +1,4 @@
-import './App.css'
-
-function App() {
+function MyAccount() {
 
   return (
       <div className='bg-red-100'>
@@ -9,4 +7,4 @@ function App() {
   )
 }
 
-export default App
+export default MyAccount

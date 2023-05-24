@@ -1,11 +1,27 @@
+import { useState, useEffect } from 'react'
 import Layout from '../../Components/layout'
 import Card from '../../Components/Card'
+import { data } from 'autoprefixer'
 
 function Home() {
+  const [items, setItems] = useState(null)
+
+  useEffect(() => {
+    fetch('https://api.escuelajs.co/api/v1/products')
+      .then(response => response.json())
+      .then(data => setItems(data))
+  }, [])
+
   return (
     <Layout>
       Home
-      <Card></Card>
+      <div className='grid gap-4 grid-cols-4 w-full max-w-screen-lg p-5'>
+        {
+          items?.map(item => (
+            <Card key={items.id} data={item}/>
+          ))
+        }
+      </div>
     </Layout>
   )
 }
